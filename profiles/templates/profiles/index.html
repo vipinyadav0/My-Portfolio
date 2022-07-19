@@ -380,50 +380,28 @@
                     <div class="blog">
                         <img src="{% static 'img/python.png'%}" alt="">
                         <div class="blog-text">
+                            <a href="https://medium.com/@vyvipinyadav998/how-to-write-your-first-django-app-a63d251c0c57" target="_blank">
                             <h4>
                                 How to write your first Django App
-                            </h4>
+                            </h4></a>
                             <p>
                                 To write your first django app, please go through 
                             </p>
                         </div>
                     </div>
                     <div class="blog">
-                        <img src="img/blog2.jpg" alt="">
+                        <img src="{% static 'img/deploy.png' %}" alt="">
                         <div class="blog-text">
                             <h4>
-                                Become a Web Designer in 10 Days
+                                How to deploy Django app on AWS
                             </h4>
                             <p>
-                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-                                Doloribus natus voluptas, eos obcaecati recusandae amet?
+                                To deploy yor django app, we assume you already have created an django app and virtualenv installed.<br> So moving
+                                foreward, you have to install Elastic Beanstalk i.e awsebcli with 'pip istall awsebcli'
                             </p>
                         </div>
                     </div>
-                    <div class="blog">
-                        <img src="img/blog3.jpg" alt="">
-                        <div class="blog-text">
-                            <h4>
-                                Debbuging made easy with Web Inspector
-                            </h4>
-                            <p>
-                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-                                Doloribus natus voluptas, eos obcaecati recusandae amet?
-                            </p>
-                        </div>
-                    </div>
-                    <div class="blog">
-                        <img src="img/port1.jpg" alt="">
-                        <div class="blog-text">
-                            <h4>
-                                Get started with Web Design and UI Design
-                            </h4>
-                            <p>
-                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-                                Doloribus natus voluptas, eos obcaecati recusandae amet?
-                            </p>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
         </section>
@@ -441,47 +419,47 @@
                         <div class="contact-info">
                             <div class="contact-item">
                                 <div class="icon">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                    <span>Location</span>
-                                </div>
-                                <p>
-                                    : London, united Kingdom
-                                </p>
-                            </div>
-                            <div class="contact-item">
-                                <div class="icon">
                                     <i class="fas fa-envelope"></i>
-                                    <span>Email</span>
+                                    <span><a href = "mailto: vyvipinyadav998@gmail.com" >Email Me</a></span>
                                 </div>
                                 <p>
-                                    <span>: maclinzuniversal@gmail.com</span>
+                                    <span> vyvipinyadav998@gmail.com</span>
                                 </p>
                             </div>
                             <div class="contact-item">
                                 <div class="icon">
                                     <i class="fas fa-user-graduate"></i>
-                                    <span>Education</span>
+                                    <span>Education :</span>
                                 </div>
                                 <p>
-                                    <span>: Sussex University, East Sussex</span>
+                                    <span> HNBG University, Srinagar, Garhwal, UK</span>
                                 </p>
                             </div>
                             <div class="contact-item">
                                 <div class="icon">
                                     <i class="fas fa-user-graduate"></i>
-                                    <span>Mobile Number</span>
+                                    <span>Mobile Number :</span>
                                 </div>
                                 <p>
-                                    <span>: 07522670617</span>
+                                    <span><a href="tel:805-765-6424">8057656424</a></span>
                                 </p>
                             </div>
                             <div class="contact-item">
                                 <div class="icon">
                                     <i class="fas fa-globe-africa"></i>
-                                    <span>Languages</span>
+                                    <span>Languages :</span>
                                 </div>
                                 <p>
-                                    <span>: Afrikaans, English, Spanish</span>
+                                    <span> English, Hindi</span>
+                                </p>
+                            </div>
+                            <div class="contact-item">
+                                <div class="icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Location :</span>
+                                </div>
+                                <p>
+                                    Electronic City, Bangalore, 560100, KA
                                 </p>
                             </div>
                         </div>
@@ -500,17 +478,19 @@
                         </div>
                     </div>
                     <div class="right-contact">
-                        <form action="" class="contact-form">
+                        <form action="" method="POST" class="contact-form">
+                            {% csrf_token %}
                             <div class="input-control i-c-2">
-                                <input type="text" required placeholder="YOUR NAME">
-                                <input type="text" required placeholder="SUBJECT">
+                                <input type="text" required placeholder="YOUR NAME" mame="name">
+                                <input type="text" required placeholder="SUBJECT" name="subject">
                             </div>
                             <div class="input-control">
-                                <input type="email" required placeholder="YOUR EMAIL">
+                                <input type="email" required placeholder="YOUR EMAIL" name="email">
                             </div>
                             <div class="input-control">
-                                <textarea name="" id="" cols="15" rows="8" placeholder="Message Here..."></textarea>
+                                <textarea name="message" id="" cols="15" rows="8" placeholder="Message Here..." required ></textarea>
                             </div>
+                            {% comment %} <button type="submit"> Send </button> {% endcomment %}
                             <div class="submit-btn">
                                 <a href="#" class="main-btn">
                                     <span class="btn-text">SEND</span>
@@ -518,6 +498,11 @@
                             </div>
                         </form>
                     </div>
+                </div>
+                <div class="contact-content-con">
+                    <div class="left-contact map">
+                        <h4>Reach Me</h4> <br>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d972.346360635118!2d77.65801812920004!3d12.882918906778354!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae13c8ef40e5a1%3A0x52c138361fbfc9f6!2sMohan%20Reddy%20Building!5e0!3m2!1sen!2sin!4v1658256771666!5m2!1sen!2sin" width="100%" height="400" style="border:0; border-radius:10px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
                 </div>
             </div>
         </section>
