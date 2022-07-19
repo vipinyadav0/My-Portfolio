@@ -1,0 +1,4 @@
+env
+staticfiles
+static
+# db.sqlite3
