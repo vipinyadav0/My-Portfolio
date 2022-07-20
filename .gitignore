@@ -3,3 +3,8 @@ staticfiles
 static
 # db.sqlite3
 .gitignore
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
