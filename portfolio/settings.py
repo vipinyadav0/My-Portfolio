@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-hra4(y&o8+n-4oh*-$@^qvotl!9)&8slpaum-utw$e07l(1kvr
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['radiant-beyond-91756.herokuapp.com','vipin-yadav.com']
+ALLOWED_HOSTS = ['vipinyadav.herokuapp.com','vipin-yadav.com']
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
@@ -50,6 +50,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -82,16 +83,21 @@ WSGI_APPLICATION = 'portfolio.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'd5hpcrvsj2b02q',
-        'USER': 'edoftxlzhilvwr',
-        'PASSWORD': 'b5f4d407fd38cf6f5a42a81bcc914ddb045e4abcaf5d8890d9328515b2ba53db',
-        'HOST': 'ec2-44-206-214-233.compute-1.amazonaws.com',
-        'PORT': '5432',
-    }
-}
+import dj_database_url
+db_from_env = dj_database_url.config()
+DATABASES['default'].update(db_from_env)
+DATABASES['default']['CONN_MAX_AGE'] = 500
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'd5hpcrvsj2b02q',
+#         'USER': 'edoftxlzhilvwr',
+#         'PASSWORD': 'b5f4d407fd38cf6f5a42a81bcc914ddb045e4abcaf5d8890d9328515b2ba53db',
+#         'HOST': 'ec2-44-206-214-233.compute-1.amazonaws.com',
+#         'PORT': '5432',
+#     }
+# }
 
 
 # Password validation
@@ -133,6 +139,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [
     BASE_DIR / 'static'
 ]
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
