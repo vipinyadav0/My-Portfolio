@@ -1,6 +1,5 @@
 # env
-staticfiles
-static
+
 # db.sqlite3
 .gitignore
 
