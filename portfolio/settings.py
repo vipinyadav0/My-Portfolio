@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-hra4(y&o8+n-4oh*-$@^qvotl!9)&8slpaum-utw$e07l(1kvr'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['vipinyadav.herokuapp.com','vipin-yadav.com']
 
