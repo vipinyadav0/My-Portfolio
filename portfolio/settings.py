@@ -24,9 +24,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-hra4(y&o8+n-4oh*-$@^qvotl!9)&8slpaum-utw$e07l(1kvr'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = 
+['shielded-journey-56064.herokuapp.com','vipin-yadav.com']
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
@@ -84,8 +85,12 @@ WSGI_APPLICATION = 'portfolio.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'd5hpcrvsj2b02q',
+        'USER': 'edoftxlzhilvwr',
+        'PASSWORD': 'b5f4d407fd38cf6f5a42a81bcc914ddb045e4abcaf5d8890d9328515b2ba53db',
+        'HOST': 'ec2-44-206-214-233.compute-1.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
