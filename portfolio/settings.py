@@ -26,8 +26,7 @@ SECRET_KEY = 'django-insecure-hra4(y&o8+n-4oh*-$@^qvotl!9)&8slpaum-utw$e07l(1kvr
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = 
-['shielded-journey-56064.herokuapp.com','vipin-yadav.com']
+ALLOWED_HOSTS = ['shielded-journey-56064.herokuapp.com','vipin-yadav.com']
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
